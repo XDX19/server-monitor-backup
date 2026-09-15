@@ -1,0 +1,6 @@
+# 每天凌晨 2:00 执行 MySQL 备份
+0 2 * * * /server-monitor-backup/scripts/mysql_backup.sh >> /server-monitor-backup/backup/mysql/backup.log 2>&1
+
+# 每 5 分钟执行一次服务器监控
+*/5 * * * * /usr/bin/python3 /server-monitor-backup/scripts/server_monitor.py >> /server-monitor-bachup/scripts/monts/monitor.log 2>&1
+
